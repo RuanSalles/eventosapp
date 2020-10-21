@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	  layout:decorator="@{~/base/layout}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Lista de Eventos</h1><br>
+<a href="/CadastroEvento"><h3>Cadastrar Evento</h3></a>
+<a href="/eventos"><h3>Listar Eventos</h3></a>
+
+	<div th:each="evento : ${eventos}">
+
+		<div class="row">
+			<p><span th:text="${evento.nomes}"> </span> </p>
+			<p><span th:text="${evento.locals}"> </span> </p>
+			<p><span th:text="${evento.datas}"> </span> </p>
+			<p><span th:text="${evento.horarios}"> </span> </p>
+	
+		</div>
+
+	</div>
+</body>
+</html>
