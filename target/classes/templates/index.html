@@ -2,25 +2,54 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
 	  layout:decorator="@{~/base/layout}">
+	  
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>EventoApp</title>
 </head>
-<body>
-<h1>Lista de Eventos</h1><br>
-<a href="/CadastroEvento"><h3>Cadastrar Evento</h3></a>
-<a href="/eventos"><h3>Listar Eventos</h3></a>
+<tbody>
+<div class="container">
+<nav class="navbar navbar-expand-lg navbar-light bg-light align-basedline">
+  <a class="btn btn-info" href="/index"><h3>EventosApp</h3></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  </div>
+  <br>
+<div class="container">
 
-	<div th:each="evento : ${eventos}">
-
-		<div class="row">
-			<p><span th:text="${evento.nomes}"> </span> </p>
-			<p><span th:text="${evento.locals}"> </span> </p>
-			<p><span th:text="${evento.datas}"> </span> </p>
-			<p><span th:text="${evento.horarios}"> </span> </p>
-	
-		</div>
+<a href="/CadastroEvento" class="btn btn-primary">Cadastrar Evento</a>
+<a href="/eventos" class="btn btn-warning">Listar Eventos</a><br>
+<br>
+</div>		
+	<div class="container">	
+	<table class="table table-striped table-bordered">
+			
+	<thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Local</th>
+      <th scope="col">Data</th>
+      <th scope="col">Horário</th>
+    </tr>
+  </thead>
+  	<thead>
+  	<div th:each="evento : ${eventos}">
+    <tr>
+      <th scope="row"><span th:text="${evento.nome}"> </span></th>
+      <th scope="row"><span th:text="${evento.local}"> </span></th>
+      <th scope="row"><span th:text="${evento.data}"> </span></th>
+      <th scope="row"><span th:text="${evento.horario}"> </span></th>
+    </tr>
+    </div>
+  </thead>
+			
+			</table>
+		
 
 	</div>
-</body>
+	</div>
+</tbody>
 </html>

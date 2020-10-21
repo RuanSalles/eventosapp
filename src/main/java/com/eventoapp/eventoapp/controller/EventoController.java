@@ -14,7 +14,7 @@ public class EventoController {
 	@Autowired
 	private EventoRepository er;
 	
-	@RequestMapping("/")
+	@RequestMapping("/index")
 	public String index () {
 		return "index";
 	}
