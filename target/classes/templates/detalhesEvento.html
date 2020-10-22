@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Evento</title>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body class="container">
+
+
+<div class="container">
+<nav class="navbar navbar-expand-lg navbar-light bg-light align-basedline">
+  <a class="btn btn-info" href="/index"><h3>EventosApp</h3></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  </div>
+
+<div th:each="evento : ${evento}">
+
+<div class="col">
+
+<table class="table table-striped">
+<h1>Evento</h1>
+<thead>
+<tr>
+<th><span th:text="${evento.nome}"></span></th>
+<th><span th:text="${evento.local}"></span></th>
+<th><span th:text="${evento.data}"></span></th>
+<th><span th:text="${evento.horario}"></span></th>
+</tr>
+</thead>
+</table>
+
+</div>
+
+
+
+</div>
+
+</body>
+</html>

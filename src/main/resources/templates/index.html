@@ -38,10 +38,13 @@
   	<thead>
   	<div th:each="evento : ${eventos}">
     <tr>
-      <th scope="row"><span th:text="${evento.nome}"> </span></th>
+      <th scope="row"><a th:href="${(#mvc.url('EC#detalhesEvento').arg(0, evento.codigo)).build()}"><span th:text="${evento.nome}"> </span></a></th>
       <th scope="row"><span th:text="${evento.local}"> </span></th>
       <th scope="row"><span th:text="${evento.data}"> </span></th>
       <th scope="row"><span th:text="${evento.horario}"> </span></th>
+      <th scope="row"><a th:href="${(#mvc.url('EC#deletarEvento').arg(0, evento.codigo)).build()}" class="btn btn-danger"> Deletar</a></th>
+      
+      
     </tr>
     </div>
   </thead>
